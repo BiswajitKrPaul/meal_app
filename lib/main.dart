@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:meal_app/routes/categorymealshome.dart';
+
+import './routes/categoryhome.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,30 +12,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Meal App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         accentColor: Colors.amber,
+        canvasColor: Colors.grey[50],
+        fontFamily: 'Raleway',
+        textTheme: ThemeData.light().textTheme.copyWith(
+              headline6: TextStyle(
+                fontSize: 24,
+                fontFamily: 'Roboto',
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
       ),
-      home: MyHomePage(title: 'Meal App'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      home: CategoriesHome(),
+      routes: {
+        'categoryMealHome': (ctx) => CategoryMealsHome(),
+      },
     );
   }
 }
