@@ -13,7 +13,7 @@ class CategoryMealsHome extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          '$title Item Route',
+          '$title',
         ),
       ),
     );

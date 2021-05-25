@@ -6,6 +6,8 @@ class CategoryItem extends StatelessWidget {
 
   CategoryItem(this.category);
 
+  // This Commented code has the different type of route implementation.
+
   // void nabigateToCategoryMealHome(BuildContext ctx) {
   //   Navigator.of(ctx).push(
   //     MaterialPageRoute(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meal_app/routes/categorymealshome.dart';
+import './routes/categorymealshome.dart';
 
 import './routes/categoryhome.dart';
 
@@ -25,6 +25,12 @@ class MyApp extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
+              headline1: TextStyle(
+                  fontSize: 16.0,
+                  fontFamily: 'Raleway',
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
             ),
       ),
       home: CategoriesHome(),
