@@ -3,6 +3,9 @@ import 'package:meal_app/models/meal.dart';
 
 class MealDetail extends StatelessWidget {
   static const String routeName = '/MealDetail';
+  Function addToFav;
+
+  MealDetail(this.addToFav);
 
   Widget buildContainerTitle(BuildContext context, String title) {
     return Container(
@@ -53,6 +56,7 @@ class MealDetail extends StatelessWidget {
               children: [
                 Column(
                   mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(
                       height: 9,
@@ -117,10 +121,15 @@ class MealDetail extends StatelessWidget {
                   ],
                 )
               ],
-            )
+            ),
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => addToFav(mealItem),
+        child: Icon(Icons.favorite),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

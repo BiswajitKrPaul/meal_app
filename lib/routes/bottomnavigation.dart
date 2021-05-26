@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:meal_app/routes/categoryhome.dart';
 import 'package:meal_app/routes/favouriteshome.dart';
 import 'package:meal_app/widgets/maindrawer.dart';
+import '../models/meal.dart';
 
 class BottomNavigation extends StatefulWidget {
   static String routeName = 'bottomNavigation';
+  List<Meal> favouriteMeal;
+  BottomNavigation(this.favouriteMeal);
   @override
   _BottomNavigationState createState() => _BottomNavigationState();
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  final List<Widget> _pages = [
-    CategoriesHome(),
-    FavouritesHome(),
-  ];
+  List<Widget> _pages;
 
   final List<String> _titles = [
     'Meal Category',
@@ -25,6 +25,15 @@ class _BottomNavigationState extends State<BottomNavigation> {
     setState(() {
       _selectedPage = index;
     });
+  }
+
+  @override
+  void initState() {
+    _pages = [
+      CategoriesHome(),
+      FavouritesHome(widget.favouriteMeal),
+    ];
+    super.initState();
   }
 
   @override

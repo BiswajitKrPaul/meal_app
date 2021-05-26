@@ -5,9 +5,14 @@ import 'package:meal_app/routes/mealdetail.dart';
 class MealItem extends StatelessWidget {
   final Meal mealItem;
 
-  MealItem(this.mealItem);
+  MealItem({
+    @required this.mealItem,
+  });
   void selectedMeal(BuildContext context) {
-    Navigator.of(context).pushNamed(MealDetail.routeName, arguments: mealItem);
+    Navigator.of(context).pushNamed(
+      MealDetail.routeName,
+      arguments: mealItem,
+    );
   }
 
   String get getComplexity {
